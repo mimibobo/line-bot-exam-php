@@ -24,9 +24,21 @@
         $arrayPostData['messages'][0]['originalContentUrl'] = $image_url;
         $arrayPostData['messages'][0]['previewImageUrl'] = $image_url;
         $arrayPostData['messages'][1]['type'] = "text";
-        $arrayPostData['messages'][1]['text'] = "มารวย ช่วยสำเร็จ";
+        $arrayPostData['messages'][1]['text'] = "นายมารวย ช่วยสำเร็จ";
         $arrayPostData['messages'][2]['type'] = "text";
-        $arrayPostData['messages'][2]['text'] = "Apostle4";
+        $arrayPostData['messages'][2]['text'] = "ตำแหน่ง : IT Manager";
+        replyMsg($arrayHeader,$arrayPostData);
+    }
+    else if($message == "0002"){
+        $image_url = "https://www.img.in.th/images/3725549c838d67257ab3edcaf36c5267.jpg";
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "image";
+        $arrayPostData['messages'][0]['originalContentUrl'] = $image_url;
+        $arrayPostData['messages'][0]['previewImageUrl'] = $image_url;
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "นายตุ่น ขี้โม้";
+        $arrayPostData['messages'][2]['type'] = "text";
+        $arrayPostData['messages'][2]['text'] = "ตำแหน่ง : Store Keeper";
         replyMsg($arrayHeader,$arrayPostData);
     }
     #ตัวอย่าง Message Type "Sticker"
