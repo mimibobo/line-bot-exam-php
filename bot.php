@@ -17,7 +17,7 @@
         $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";
         replyMsg($arrayHeader,$arrayPostData);
     }
-    else if($message == "0001"){
+    else if($message == "1"){
         $image_url = "https://www.img.in.th/images/b6625dd77c9d1aed66c94c66f80595be.jpg";
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "image";
@@ -29,16 +29,28 @@
         $arrayPostData['messages'][2]['text'] = "ตำแหน่ง : IT Manager";
         replyMsg($arrayHeader,$arrayPostData);
     }
-    else if($message == "0002"){
+    else if($message == "2"){
         $image_url = "https://www.img.in.th/images/3725549c838d67257ab3edcaf36c5267.jpg";
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "image";
         $arrayPostData['messages'][0]['originalContentUrl'] = $image_url;
         $arrayPostData['messages'][0]['previewImageUrl'] = $image_url;
         $arrayPostData['messages'][1]['type'] = "text";
-        $arrayPostData['messages'][1]['text'] = "นายตุ่น ขี้โม้";
+        $arrayPostData['messages'][1]['text'] = "นายตุ่น จอมขี้โม้";
         $arrayPostData['messages'][2]['type'] = "text";
         $arrayPostData['messages'][2]['text'] = "ตำแหน่ง : Store Keeper";
+        replyMsg($arrayHeader,$arrayPostData);
+    }
+    else if($message == "3"){
+        $image_url = "https://www.img.in.th/images/580aee99964563e5960332d523dc836b.jpg";
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "image";
+        $arrayPostData['messages'][0]['originalContentUrl'] = $image_url;
+        $arrayPostData['messages'][0]['previewImageUrl'] = $image_url;
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "นายวิริยะ อุตสาหะ";
+        $arrayPostData['messages'][2]['type'] = "text";
+        $arrayPostData['messages'][2]['text'] = "ตำแหน่ง :HSQE Officer";
         replyMsg($arrayHeader,$arrayPostData);
     }
     #ตัวอย่าง Message Type "Sticker"
