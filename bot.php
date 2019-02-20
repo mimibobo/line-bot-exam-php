@@ -43,20 +43,20 @@
 			$arrayPostData['messages'][$index]['type'] = "text";
 			$arrayPostData['messages'][$index]['text'] = 			
 			$index == 0 ? "" : "\n"
-			. "SAP Material         : " . $item["SAP Material"]
-			. "\n" . "Description          : " . $item["Description"]
-			. "\n" . "Storage Location     : " . $item["Storage Location"]
-			. "\n" . "Storage Bin          : " . $item["Storage Bin"]
-			. "\n" . "Type                 : " . $item["Type"]
-			. "\n" . "Group                : " . $item["Group"]
-			. "\n" . "Old Material         : " . $item["Old Material"]
-			. "\n" . "Model / Part Number  : " . $item["Model / Part Number"]
-			. "\n" . "Contractual Q'ty     : " . $item["Contractual Q'ty"]
-			. "\n" . "Supplementary Q'ty   : " . $item["Supplementary Q'ty"]
-			. "\n" . "Warranty Q'ty        : " . $item["Warranty Q'ty"]
-			. "\n" . "Unrestricted use     : " . $item["Unrestricted use"]
-			. "\n" . "Blocked              : " . $item["Blocked"]
-			. "\n" . "In Qual. Insp.       : " . $item["In Qual. Insp."];
+			. "SAP Material         : " . $data[$item]["SAP Material"]
+			. "\n" . "Description          : " . $data[$item]["Description"]
+			. "\n" . "Storage Location     : " . $data[$item]["Storage Location"]
+			. "\n" . "Storage Bin          : " . $data[$item]["Storage Bin"]
+			. "\n" . "Type                 : " . $data[$item]["Type"]
+			. "\n" . "Group                : " . $data[$item]["Group"]
+			. "\n" . "Old Material         : " . $data[$item]["Old Material"]
+			. "\n" . "Model / Part Number  : " . $data[$item]["Model / Part Number"]
+			. "\n" . "Contractual Q'ty     : " . $data[$item]["Contractual Q'ty"]
+			. "\n" . "Supplementary Q'ty   : " . $data[$item]["Supplementary Q'ty"]
+			. "\n" . "Warranty Q'ty        : " . $data[$item]["Warranty Q'ty"]
+			. "\n" . "Unrestricted use     : " . $data[$item]["Unrestricted use"]
+			. "\n" . "Blocked              : " . $data[$item]["Blocked"]
+			. "\n" . "In Qual. Insp.       : " . $data[$item]["In Qual. Insp."];
 		}
 		replyMsg($arrayHeader,$arrayPostData);
 	}else
