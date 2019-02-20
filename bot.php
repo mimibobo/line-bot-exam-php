@@ -22,20 +22,20 @@
 		$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
 		$arrayPostData['messages'][$index]['type'] = "text";
 		$arrayPostData['messages'][$index]['text'] = 
-			"SAP Material         : " + $data[0]["SAP Material"]
-			. "\n" . "Description          : " + $data[0]["Description"]
-			. "\n" . "Storage Location     : " + $data[0]["Storage Location"]
-			. "\n" . "Storage Bin          : " + $data[0]["Storage Bin"]
-			. "\n" . "Type                 : " + $data[0]["Type"]
-			. "\n" . "Group                : " + $data[0]["Group"]
-			. "\n" . "Old Material         : " + $data[0]["Old Material"]
-			. "\n" . "Model / Part Number  : " + $data[0]["Model / Part Number"]
-			. "\n" . "Contractual Q'ty     : " + $data[0]["Contractual Q'ty"]
-			. "\n" . "Supplementary Q'ty   : " + $data[0]["Supplementary Q'ty"]
-			. "\n" . "Warranty Q'ty        : " + $data[0]["Warranty Q'ty"]
-			. "\n" . "Unrestricted use     : " + $data[0]["Unrestricted use"]
-			. "\n" . "Blocked              : " + $data[0]["Blocked"]
-			. "\n" . "In Qual. Insp.       : " + $data[0]["In Qual. Insp."];
+			"SAP Material         : " . $data[0]["SAP Material"]
+			. "\n" . "Description          : " . $data[0]["Description"]
+			. "\n" . "Storage Location     : " . $data[0]["Storage Location"]
+			. "\n" . "Storage Bin          : " . $data[0]["Storage Bin"]
+			. "\n" . "Type                 : " . $data[0]["Type"]
+			. "\n" . "Group                : " . $data[0]["Group"]
+			. "\n" . "Old Material         : " . $data[0]["Old Material"]
+			. "\n" . "Model / Part Number  : " . $data[0]["Model / Part Number"]
+			. "\n" . "Contractual Q'ty     : " . $data[0]["Contractual Q'ty"]
+			. "\n" . "Supplementary Q'ty   : " . $data[0]["Supplementary Q'ty"]
+			. "\n" . "Warranty Q'ty        : " . $data[0]["Warranty Q'ty"]
+			. "\n" . "Unrestricted use     : " . $data[0]["Unrestricted use"]
+			. "\n" . "Blocked              : " . $data[0]["Blocked"]
+			. "\n" . "In Qual. Insp.       : " . $data[0]["In Qual. Insp."];
 		/*
 		foreach ($data as $item)
 		{
