@@ -19,7 +19,6 @@
 	$c = count($data);
 	if($c > 0)
 	{
-		$index = 0;
 		$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
 		/*
 		$arrayPostData['messages'][$index]['type'] = "text";
@@ -39,10 +38,10 @@
 			. "\n" . "Blocked              : " . $data[0]["Blocked"]
 			. "\n" . "In Qual. Insp.       : " . $data[0]["In Qual. Insp."];
 		*/
-		for ($item = 0; $item < 1; $item++) {
-			$arrayPostData['messages'][$index]['type'] = "text";
-			$arrayPostData['messages'][$index]['text'] = 			
-			$index == 0 ? "" : "\n"
+		for ($item = 0; $item < $c; $item++) {
+			$arrayPostData['messages'][$item]['type'] = "text";
+			$arrayPostData['messages'][$item]['text'] = 
+			$item == 0 ? "" : "\n"
 			. "SAP Material         : " . $data[$item]["SAP Material"]
 			. "\n" . "Description          : " . $data[$item]["Description"]
 			. "\n" . "Storage Location     : " . $data[$item]["Storage Location"]
