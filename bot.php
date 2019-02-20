@@ -22,20 +22,20 @@
 		$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
 		$arrayPostData['messages'][$index]['type'] = "text";
 		$arrayPostData['messages'][$index]['text'] = 
-			"SAP Material         : " + $item["SAP Material"]
-			. "\n" . "Description          : " + $item["Description"]
-			. "\n" . "Storage Location     : " + $item["Storage Location"]
-			. "\n" . "Storage Bin          : " + $item["Storage Bin"]
-			. "\n" . "Type                 : " + $item["Type"]
-			. "\n" . "Group                : " + $item["Group"]
-			. "\n" . "Old Material         : " + $item["Old Material"]
-			. "\n" . "Model / Part Number  : " + $item["Model / Part Number"]
-			. "\n" . "Contractual Q'ty     : " + $item["Contractual Q'ty"]
-			. "\n" . "Supplementary Q'ty   : " + $item["Supplementary Q'ty"]
-			. "\n" . "Warranty Q'ty        : " + $item["Warranty Q'ty"]
-			. "\n" . "Unrestricted use     : " + $item["Unrestricted use"]
-			. "\n" . "Blocked              : " + $item["Blocked"]
-			. "\n" . "In Qual. Insp.       : " + $item["In Qual. Insp."];
+			"SAP Material         : " + $data[0]["SAP Material"]
+			. "\n" . "Description          : " + $data[0]["Description"]
+			. "\n" . "Storage Location     : " + $data[0]["Storage Location"]
+			. "\n" . "Storage Bin          : " + $data[0]["Storage Bin"]
+			. "\n" . "Type                 : " + $data[0]["Type"]
+			. "\n" . "Group                : " + $data[0]["Group"]
+			. "\n" . "Old Material         : " + $data[0]["Old Material"]
+			. "\n" . "Model / Part Number  : " + $data[0]["Model / Part Number"]
+			. "\n" . "Contractual Q'ty     : " + $data[0]["Contractual Q'ty"]
+			. "\n" . "Supplementary Q'ty   : " + $data[0]["Supplementary Q'ty"]
+			. "\n" . "Warranty Q'ty        : " + $data[0]["Warranty Q'ty"]
+			. "\n" . "Unrestricted use     : " + $data[0]["Unrestricted use"]
+			. "\n" . "Blocked              : " + $data[0]["Blocked"]
+			. "\n" . "In Qual. Insp.       : " + $data[0]["In Qual. Insp."];
 		/*
 		foreach ($data as $item)
 		{
