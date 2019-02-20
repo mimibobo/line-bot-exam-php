@@ -20,6 +20,7 @@
 	{
 		$index = 0;
 		$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+		/*
 		$arrayPostData['messages'][$index]['type'] = "text";
 		$arrayPostData['messages'][$index]['text'] = 
 			"SAP Material         : " . $data[0]["SAP Material"]
@@ -36,31 +37,29 @@
 			. "\n" . "Unrestricted use     : " . $data[0]["Unrestricted use"]
 			. "\n" . "Blocked              : " . $data[0]["Blocked"]
 			. "\n" . "In Qual. Insp.       : " . $data[0]["In Qual. Insp."];
-		/*
+		*/
 		foreach ($data as $item)
 		{
 			$arrayPostData['messages'][$index]['type'] = "text";
-			$arrayPostData['messages'][$index]['text'] = $item["SAP Material"];
-			
+			$arrayPostData['messages'][$index]['text'] = 			
 			$index == 0 ? "" : "\n"
-			. "SAP Material         : " + $item["SAP Material"]
-			. "\n" . "Description          : " + $item["Description"]
-			. "\n" . "Storage Location     : " + $item["Storage Location"]
-			. "\n" . "Storage Bin          : " + $item["Storage Bin"]
-			. "\n" . "Type                 : " + $item["Type"]
-			. "\n" . "Group                : " + $item["Group"]
-			. "\n" . "Old Material         : " + $item["Old Material"]
-			. "\n" . "Model / Part Number  : " + $item["Model / Part Number"]
-			. "\n" . "Contractual Q'ty     : " + $item["Contractual Q'ty"]
-			. "\n" . "Supplementary Q'ty   : " + $item["Supplementary Q'ty"]
-			. "\n" . "Warranty Q'ty        : " + $item["Warranty Q'ty"]
-			. "\n" . "Unrestricted use     : " + $item["Unrestricted use"]
-			. "\n" . "Blocked              : " + $item["Blocked"]
-			. "\n" . "In Qual. Insp.       : " + $item["In Qual. Insp."];
+			. "SAP Material         : " . $item["SAP Material"]
+			. "\n" . "Description          : " . $item["Description"]
+			. "\n" . "Storage Location     : " . $item["Storage Location"]
+			. "\n" . "Storage Bin          : " . $item["Storage Bin"]
+			. "\n" . "Type                 : " . $item["Type"]
+			. "\n" . "Group                : " . $item["Group"]
+			. "\n" . "Old Material         : " . $item["Old Material"]
+			. "\n" . "Model / Part Number  : " . $item["Model / Part Number"]
+			. "\n" . "Contractual Q'ty     : " . $item["Contractual Q'ty"]
+			. "\n" . "Supplementary Q'ty   : " . $item["Supplementary Q'ty"]
+			. "\n" . "Warranty Q'ty        : " . $item["Warranty Q'ty"]
+			. "\n" . "Unrestricted use     : " . $item["Unrestricted use"]
+			. "\n" . "Blocked              : " . $item["Blocked"]
+			. "\n" . "In Qual. Insp.       : " . $item["In Qual. Insp."];
 			
 			$index++;
 		}
-		//*/
 		replyMsg($arrayHeader,$arrayPostData);
 	}else
 	{
