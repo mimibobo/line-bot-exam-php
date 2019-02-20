@@ -22,7 +22,7 @@
 	{
 		$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
 		for ($item = 0; $item < $c; $item++) {
-			$test = $test . "1";
+			$test = $test . $item;
 				/*
 			$item == 0 ? "" : "\n"
 			. "SAP Material         : " . $data[$item]["SAP Material"]
