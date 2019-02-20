@@ -40,7 +40,8 @@
 		*/
 		for ($item = 0; $item < $c; $item++) {
 			$arrayPostData['messages'][$item]['type'] = "text";
-			$arrayPostData['messages'][$item]['text'] = 
+			$arrayPostData['messages'][$item]['text'] = "1";
+				/*
 			$item == 0 ? "" : "\n"
 			. "SAP Material         : " . $data[$item]["SAP Material"]
 			. "\n" . "Description          : " . $data[$item]["Description"]
@@ -56,6 +57,7 @@
 			. "\n" . "Unrestricted use     : " . $data[$item]["Unrestricted use"]
 			. "\n" . "Blocked              : " . $data[$item]["Blocked"]
 			. "\n" . "In Qual. Insp.       : " . $data[$item]["In Qual. Insp."];
+			*/
 		}
 		replyMsg($arrayHeader,$arrayPostData);
 	}else
