@@ -23,7 +23,8 @@
 		foreach ($data as $item)
 		{
 			$arrayPostData['messages'][$index]['type'] = "text";
-			$arrayPostData['messages'][$index]['text'] = 
+			$arrayPostData['messages'][$index]['text'] = $item["SAP Material"];
+			/*
 			$index == 0 ? "" : "\n"
 			. "SAP Material         : " + $item["SAP Material"]
 			. "\n" . "Description          : " + $item["Description"]
@@ -39,9 +40,17 @@
 			. "\n" . "Unrestricted use     : " + $item["Unrestricted use"]
 			. "\n" . "Blocked              : " + $item["Blocked"]
 			. "\n" . "In Qual. Insp.       : " + $item["In Qual. Insp."];
+			*/
 			$index++;
 		}
 		replyMsg($arrayHeader,$arrayPostData);
+	}else
+	{
+		$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "sticker";
+        $arrayPostData['messages'][0]['packageId'] = "11538";
+        $arrayPostData['messages'][0]['stickerId'] = "51626526";
+        replyMsg($arrayHeader,$arrayPostData);
 	}
 	
 		
@@ -81,3 +90,4 @@
 
 	exit;
 ?>
+
