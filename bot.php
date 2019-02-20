@@ -14,39 +14,36 @@
     //รับข้อความจากผู้ใช้
     $message = $arrayJson['events'][0]['message']['text'];
 	
-	SearchData($arrayHeader,$message);
-	
-	function SearchData($arrayHeader,$message){
-		$all_data = getData();
-		$data = array_column($all_data,$message);
-		if(count($data) > 0)
+	$all_data = getData();
+	$data = array_column($all_data,$message);
+	if(count($data) > 0)
+	{
+		$index = 0;
+		$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+		foreach ($data as $item)
 		{
-			$index = 0;
-			$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-			foreach ($data as $item)
-			{
-				$arrayPostData['messages'][$index]['type'] = "text";
-				$arrayPostData['messages'][$index]['text'] = 
-				$index == 0 ? "" : "\n"
-				. "SAP Material         : " + $item["SAP Material"]
-				. "\n" . "Description          : " + $item["Description"]
-				. "\n" . "Storage Location     : " + $item["Storage Location"]
-				. "\n" . "Storage Bin          : " + $item["Storage Bin"]
-				. "\n" . "Type                 : " + $item["Type"]
-				. "\n" . "Group                : " + $item["Group"]
-				. "\n" . "Old Material         : " + $item["Old Material"]
-				. "\n" . "Model / Part Number  : " + $item["Model / Part Number"]
-				. "\n" . "Contractual Q'ty     : " + $item["Contractual Q'ty"]
-				. "\n" . "Supplementary Q'ty   : " + $item["Supplementary Q'ty"]
-				. "\n" . "Warranty Q'ty        : " + $item["Warranty Q'ty"]
-				. "\n" . "Unrestricted use     : " + $item["Unrestricted use"]
-				. "\n" . "Blocked              : " + $item["Blocked"]
-				. "\n" . "In Qual. Insp.       : " + $item["In Qual. Insp."];
-				$index++;
-			}
-			replyMsg($arrayHeader,$arrayPostData);
+			$arrayPostData['messages'][$index]['type'] = "text";
+			$arrayPostData['messages'][$index]['text'] = 
+			$index == 0 ? "" : "\n"
+			. "SAP Material         : " + $item["SAP Material"]
+			. "\n" . "Description          : " + $item["Description"]
+			. "\n" . "Storage Location     : " + $item["Storage Location"]
+			. "\n" . "Storage Bin          : " + $item["Storage Bin"]
+			. "\n" . "Type                 : " + $item["Type"]
+			. "\n" . "Group                : " + $item["Group"]
+			. "\n" . "Old Material         : " + $item["Old Material"]
+			. "\n" . "Model / Part Number  : " + $item["Model / Part Number"]
+			. "\n" . "Contractual Q'ty     : " + $item["Contractual Q'ty"]
+			. "\n" . "Supplementary Q'ty   : " + $item["Supplementary Q'ty"]
+			. "\n" . "Warranty Q'ty        : " + $item["Warranty Q'ty"]
+			. "\n" . "Unrestricted use     : " + $item["Unrestricted use"]
+			. "\n" . "Blocked              : " + $item["Blocked"]
+			. "\n" . "In Qual. Insp.       : " + $item["In Qual. Insp."];
+			$index++;
 		}
+		replyMsg($arrayHeader,$arrayPostData);
 	}
+	
 		
 	function replyMsg($arrayHeader,$arrayPostData)
 	{
@@ -78,11 +75,7 @@
  array("11100006" => array("SAP Material"=> "11100006","Description"=> "Lock Set Latch Lever","Storage Location"=> "AIRC","Storage Bin"=> "42_01_02","Type"=> "ZSP1","Group"=> "1111","Old Material"=> "CIVSP007","Model / Part Number"=> "","Contractual Q'ty"=> "","Supplementary Q'ty"=> "","Warranty Q'ty"=> "","Unrestricted use"=> "12","Blocked"=> "0","In Qual. Insp."=> "0")),
  array("11100006" => array("SAP Material"=> "11100006","Description"=> "Lock Set Latch Lever","Storage Location"=> "PAST","Storage Bin"=> "","Type"=> "ZSP1","Group"=> "1111","Old Material"=> "CIVSP007","Model / Part Number"=> "","Contractual Q'ty"=> "","Supplementary Q'ty"=> "","Warranty Q'ty"=> "","Unrestricted use"=> "0","Blocked"=> "0","In Qual. Insp."=> "0")),
  array("11100007" => array("SAP Material"=> "11100007","Description"=> "Lock Set Heavy Duty Lock","Storage Location"=> "PAST","Storage Bin"=> "","Type"=> "ZSP1","Group"=> "1111","Old Material"=> "CIVSP008","Model / Part Number"=> "","Contractual Q'ty"=> "","Supplementary Q'ty"=> "","Warranty Q'ty"=> "","Unrestricted use"=> "0","Blocked"=> "0","In Qual. Insp."=> "0")),
- array("11100008" => array("SAP Material"=> "11100008","Description"=> "Lock Set Latch Lever M","Storage Location"=> "AIRC","Storage Bin"=> "42_01_02","Type"=> "ZSP1","Group"=> "1111","Old Material"=> "CIVSP009","Model / Part Number"=> "","Contractual Q'ty"=> "","Supplementary Q'ty"=> "","Warranty Q'ty"=> "","Unrestricted use"=> "12","Blocked"=> "0","In Qual. Insp."=> "0")),
- array("11100008" => array("SAP Material"=> "11100008","Description"=> "Lock Set Latch Lever M","Storage Location"=> "PAST","Storage Bin"=> "","Type"=> "ZSP1","Group"=> "1111","Old Material"=> "CIVSP009","Model / Part Number"=> "","Contractual Q'ty"=> "","Supplementary Q'ty"=> "","Warranty Q'ty"=> "","Unrestricted use"=> "0","Blocked"=> "0","In Qual. Insp."=> "0")),
- array("11100009" => array("SAP Material"=> "11100009","Description"=> "Lock Case NAM26-E71","Storage Location"=> "AIRC","Storage Bin"=> "42_09_01","Type"=> "ZSP1","Group"=> "1111","Old Material"=> "CIVSP010","Model / Part Number"=> "","Contractual Q'ty"=> "","Supplementary Q'ty"=> "","Warranty Q'ty"=> "","Unrestricted use"=> "12","Blocked"=> "0","In Qual. Insp."=> "0")),
- array("11100009" => array("SAP Material"=> "11100009","Description"=> "Lock Case NAM26-E71","Storage Location"=> "PAST","Storage Bin"=> "","Type"=> "ZSP1","Group"=> "1111","Old Material"=> "CIVSP010","Model / Part Number"=> "","Contractual Q'ty"=> "","Supplementary Q'ty"=> "","Warranty Q'ty"=> "","Unrestricted use"=> "0","Blocked"=> "0","In Qual. Insp."=> "0")),
- 
+ array("11100008" => array("SAP Material"=> "11100008","Description"=> "Lock Set Latch Lever M","Storage Location"=> "AIRC","Storage Bin"=> "42_01_02","Type"=> "ZSP1","Group"=> "1111","Old Material"=> "CIVSP009","Model / Part Number"=> "","Contractual Q'ty"=> "","Supplementary Q'ty"=> "","Warranty Q'ty"=> "","Unrestricted use"=> "12","Blocked"=> "0","In Qual. Insp."=> "0"))
 		);
 	}
 
