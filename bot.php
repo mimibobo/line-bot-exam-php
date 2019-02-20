@@ -39,7 +39,7 @@
 			. "\n" . "Blocked              : " . $data[0]["Blocked"]
 			. "\n" . "In Qual. Insp.       : " . $data[0]["In Qual. Insp."];
 		*/
-		for ($item = 0; $item < $c; $item++) {
+		for ($item = 0; $item < 1; $item++) {
 			$arrayPostData['messages'][$index]['type'] = "text";
 			$arrayPostData['messages'][$index]['text'] = 			
 			$index == 0 ? "" : "\n"
