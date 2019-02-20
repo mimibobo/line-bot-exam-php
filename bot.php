@@ -16,7 +16,8 @@
 	
 	$all_data = getData();
 	$data = array_column($all_data,$message);
-	if(count($data) > 0)
+	$c = count($data);
+	if($c > 0)
 	{
 		$index = 0;
 		$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
@@ -38,8 +39,7 @@
 			. "\n" . "Blocked              : " . $data[0]["Blocked"]
 			. "\n" . "In Qual. Insp.       : " . $data[0]["In Qual. Insp."];
 		*/
-		foreach ($data as $item)
-		{
+		for ($item = 0; $item < $c; $item++) {
 			$arrayPostData['messages'][$index]['type'] = "text";
 			$arrayPostData['messages'][$index]['text'] = 			
 			$index == 0 ? "" : "\n"
@@ -57,8 +57,6 @@
 			. "\n" . "Unrestricted use     : " . $item["Unrestricted use"]
 			. "\n" . "Blocked              : " . $item["Blocked"]
 			. "\n" . "In Qual. Insp.       : " . $item["In Qual. Insp."];
-			
-			$index++;
 		}
 		replyMsg($arrayHeader,$arrayPostData);
 	}else
