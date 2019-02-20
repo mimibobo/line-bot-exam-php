@@ -43,6 +43,8 @@
 		}
 		$arrayPostData['messages'][0]['type'] = "text";
 		$arrayPostData['messages'][0]['text'] = $test;
+		$arrayPostData['messages'][1]['type'] = "text";
+		$arrayPostData['messages'][1]['text'] = "พ่อมึง";
 		replyMsg($arrayHeader,$arrayPostData);
 	}else
 	{
