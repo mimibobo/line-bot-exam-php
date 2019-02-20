@@ -20,11 +20,14 @@
 	{
 		$index = 0;
 		$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+		$arrayPostData['messages'][$index]['type'] = "text";
+		$arrayPostData['messages'][$index]['text'] = $data[0]["SAP Material"];
+		/*
 		foreach ($data as $item)
 		{
 			$arrayPostData['messages'][$index]['type'] = "text";
 			$arrayPostData['messages'][$index]['text'] = $item["SAP Material"];
-			/*
+			
 			$index == 0 ? "" : "\n"
 			. "SAP Material         : " + $item["SAP Material"]
 			. "\n" . "Description          : " + $item["Description"]
@@ -40,9 +43,10 @@
 			. "\n" . "Unrestricted use     : " + $item["Unrestricted use"]
 			. "\n" . "Blocked              : " + $item["Blocked"]
 			. "\n" . "In Qual. Insp.       : " + $item["In Qual. Insp."];
-			*/
+			
 			$index++;
 		}
+		//*/
 		replyMsg($arrayHeader,$arrayPostData);
 	}else
 	{
@@ -90,4 +94,3 @@
 
 	exit;
 ?>
-
