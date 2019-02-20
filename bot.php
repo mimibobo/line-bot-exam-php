@@ -22,10 +22,9 @@
 	{
 		$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
 		for ($item = 0; $item < $c; $item++) {
-			$test = $test . $item;
-				/*
-			$item == 0 ? "" : "\n"
-			. "SAP Material         : " . $data[$item]["SAP Material"]
+			$arrayPostData['messages'][$item]['type'] = "text";
+			$arrayPostData['messages'][$item]['text'] = 
+			 "SAP Material         : " . $data[$item]["SAP Material"]
 			. "\n" . "Description          : " . $data[$item]["Description"]
 			. "\n" . "Storage Location     : " . $data[$item]["Storage Location"]
 			. "\n" . "Storage Bin          : " . $data[$item]["Storage Bin"]
@@ -39,12 +38,7 @@
 			. "\n" . "Unrestricted use     : " . $data[$item]["Unrestricted use"]
 			. "\n" . "Blocked              : " . $data[$item]["Blocked"]
 			. "\n" . "In Qual. Insp.       : " . $data[$item]["In Qual. Insp."];
-			*/
 		}
-		$arrayPostData['messages'][0]['type'] = "text";
-		$arrayPostData['messages'][0]['text'] = $test;
-		$arrayPostData['messages'][1]['type'] = "text";
-		$arrayPostData['messages'][1]['text'] = "พ่อมึง";
 		replyMsg($arrayHeader,$arrayPostData);
 	}else
 	{
